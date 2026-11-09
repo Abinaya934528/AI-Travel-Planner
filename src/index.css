@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --color-ink: #122033;
+  --color-ink-soft: #3d4d63;
+  --color-sand: #f4eee4;
+  --color-sand-deep: #e7d9c4;
+  --color-ocean: #0f6b6c;
+  --color-ocean-dark: #0b4f50;
+  --color-gold: #c4a35a;
+  --color-coral: #c45c4a;
+  --color-mist: #f7f4ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-mist);
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ocean);
+  outline-offset: 3px;
+}
+
+.hero-overlay {
+  background:
+    linear-gradient(180deg, rgba(10, 24, 38, 0.28) 0%, rgba(10, 24, 38, 0.62) 55%, rgba(10, 24, 38, 0.78) 100%);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.7s ease both;
+}
+
+@media print {
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+}
